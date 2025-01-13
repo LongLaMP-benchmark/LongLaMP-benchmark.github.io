@@ -5,239 +5,127 @@ permalink: download
 ---
 
 <p>
-    This page contains links to access the datasets. Our benchmark encompasses two settings for each task: 1) User setting, replicating real-world cold start behavior; 2) Temporal setting, aiding the study of LLMs' abilities to capture behaviors over time, another common scenario. Both settings are described in more detail in the paper. The following sections introduce each task and provide dataset links, along with small subsets for previewing. Notably, the Avocado (Personalized Email Subject Generation) dataset isn't publicly available. However, we offer the code and sample IDs used for dataset generation. Follow the instructions to easily generate the dataset upon Avocado dataset access.
+    This page contains links to access the datasets. Our benchmark encompasses two settings for each task: 1) User setting, replicating real-world cold start behavior; 2) Temporal setting, aiding the study of LLMs' abilities to capture behaviors over time, another common scenario. Both settings are described in more detail in the paper. The following sections introduce each task and provide dataset links, along with small subsets for previewing. 
 </p>
 
-<p id="email_completion">
-<h3>Personalized Email Completion</h3>
-<p>This dataset is created using the private email collection dataset: Avocado Research Email Collection. The objective of this task is to complete the email for a given user, given an email subject, part of the email and user's previous email-subject pairs. For more information on this, refer to the longLAMP paper.  </p>
-<p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
-<table id="download-table">
-    <thead>
-        <tr>
-            <th rowspan="2">Setting</th>
-            <th colspan="2">Train</th>
-            <th colspan="2">Validation</th>
-            <th colspan="1">Test</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>
-                <p>User Setting</p> 
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a>
-            </th>
-        </tr>
-        <tr>
-            <th>
-                <p>Temporal Setting</p> 
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a>
-            </th>
-        </tr>
-    </tbody>
-</table>
+<div id="email_completion">
+<h2>Personalized Email Completion</h2>
+<p>
+    This dataset is created using the private email collection dataset: Avocado Research Email Collection. 
+    The objective of this task is to complete the email for a given user, given an email subject, 
+    part of the email and user's previous email-subject pairs.
+</p>
+<p>
+    The Avocado dataset is not publicly accessible. However, we provided the samples' ID 
+    and the code we used to generate our dataset. Therefore, if you get access to the dataset, 
+    you can quickly generate the dataset with the same format as the other datasets in LaMP 
+    using the following code:
 </p>
 
-<p id="abstract_generation">
-    <h3>Personalized Abstract Generation</h3>
+<pre><code>python data/avocado/create_avocado_dataset.py \
+--avocado_files_dir *Address to the directory containing zip files for avocado dataset 'avocado-1.0.2/data/text'* \
+--extract_addr *A temp dir to extract the files for creating dataset* \
+--output_dir *The directory to generate the final dataset* \
+--input_question_file_train *The address to the train_questions.json file we provided in LaMP* \
+--input_question_file_dev *The address to the dev_questions.json file we provided in LaMP* \
+--input_question_file_test *The address to the test_questions.json file we provided in LaMP*
+</code></pre>
+
+
+
+<div id="abstract_generation">
+    <h2>Personalized Abstract Generation</h2>
     <p>
-        The benchmark aims to test the model’s ability to distill complex ideas and generate accurate, concise and coherent output over the span of multiple paragraphs on domain specific tasks. The input of the model is the title of the paper along with some keywords to guide the content. The expected output is an abstract conditioned on the title and keywords in user's style. 
+        The benchmark aims to test the model’s ability to distill complex ideas and generate accurate, concise, and coherent output over the span of multiple paragraphs on domain-specific tasks. The input of the model is the title of the paper along with some keywords to guide the content. The expected output is an abstract conditioned on the title and keywords in the user's style.
     </p>
-    <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
-    <table id="download-table">
-        <thead>
-            <tr>
-                <th rowspan="2">Setting</th>
-                <th colspan="2">Train</th>
-                <th colspan="2">Validation</th>
-                <th colspan="1">Test</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    <p>User Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <p>Temporal Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-        </tbody>
-    </table>
-</p>
 
-<p id="topic_generation">
-    <h3>Personalized Topic Generation</h3>
-    <p>This task involves generating the content of Reddit posts based on the provided input, which is a summary of the post. The primary objective is to evaluate the model’s capability in expanding concisely written ideas into detailed discussions while effectively integrating the user’s writing style and specific interests.</p>
-    <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
     <table id="download-table">
         <thead>
             <tr>
-                <th rowspan="2">Setting</th>
-                <th colspan="2">Train</th>
-                <th colspan="2">Validation</th>
-                <th colspan="1">Test</th>
+                <th>Setting</th>
+                <th>Train</th>
+                <th>Validation</th>
+                <th>Test</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>
-                    <p>User Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
+                <td>User Setting</td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/abstract_generation_user" download>Train</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/abstract_generation_user/val" download>Validation</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/abstract_generation_user/test" download>Test</a></td>
             </tr>
             <tr>
-                <th>
-                    <p>Temporal Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
+                <td>Temporal Setting</td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/abstract_generation_temporal" download>Train</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/abstract_generation_temporal/val" download>Validation</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/abstract_generation_temporal/test" download>Test</a></td>
             </tr>
         </tbody>
     </table>
-</p>
+</div>
+
+
+<div id="topic_generation">
+    <h2>Personalized Topic Generation</h2>
+    <p>
+        This task involves generating the content of Reddit posts based on the provided input, which is a summary of the post. The primary objective is to evaluate the model’s capability in expanding concisely written ideas into detailed discussions while effectively integrating the user’s writing style and specific interests.
+    </p>
+
+    <table id="download-table">
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Train</th>
+                <th>Validation</th>
+                <th>Test</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>User Setting</td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/topic_writing_user" download>Train</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/topic_writing_user/val" download>Validation</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/topic_writing_user/test" download>Test</a></td>
+            </tr>
+            <tr>
+                <td>Temporal Setting</td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/topic_writing_temporal" download>Train</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/topic_writing_temporal/val" download>Validation</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/topic_writing_temporal/test" download>Test</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
     
-<p id="review_generation">
-    <h3>Personalized Product Review Generation</h3>
-    <p>Thisbenchmark focuses on generating comprehensive product reviews based on the input comprising the product description, the user’s rating, and a summary of their review. The objective is to evaluate the model’s capability to capture the user’s writing style while producing detailed opinions on the product, incorporating the individual's preferences. The generated review serves as the output, enabling an assessment of the model’s ability to synthesize coherent and personalized text aligning with the provided input and context.</p>
-    <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
+<div id ="review_generation">
+    <h2>Personalized Product Review Generation</h2>
+    <p>
+        This benchmark focuses on generating comprehensive product reviews based on the input comprising the product description, the user’s rating, and a summary of their review. The objective is to evaluate the model’s capability to capture the user’s writing style while producing detailed opinions on the product, incorporating the individual's preferences. The generated review serves as the output, enabling an assessment of the model’s ability to synthesize coherent and personalized text aligning with the provided input and context.
+    </p>
+
     <table id="download-table">
         <thead>
             <tr>
-                <th rowspan="2">Setting</th>
-                <th colspan="2">Train</th>
-                <th colspan="2">Validation</th>
-                <th colspan="1">Test</th>
+                <th>Setting</th>
+                <th>Train</th>
+                <th>Validation</th>
+                <th>Test</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>
-                    <p>User Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
+                <td>User Setting</td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/product_review_user" download>Train</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/product_review_user/val" download>Validation</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/product_review_user/test" download>Test</a></td>
             </tr>
             <tr>
-                <th>
-                    <p>Temporal Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
+                <td>Temporal Setting</td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/product_review_temporal" download>Train</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/product_review_temporal/val" download>Validation</a></td>
+                <td><a href="https://huggingface.co/datasets/LongLaMP/LongLaMP/viewer/product_review_temporal/test" download>Test</a></td>
             </tr>
         </tbody>
     </table>
-</p>
+</div>
